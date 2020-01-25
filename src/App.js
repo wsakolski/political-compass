@@ -6,23 +6,9 @@ Route,
 Link,
 useRouteMatch,
 useParams} from "react-router-dom"
-
-
-const Test = () => (
-    <h2>Test</h2>
-);
-
-
-
-const Home = () => (
-    <h2>Home</h2>
-);
-
-
-
-const About = () => (
-    <h2>About</h2>
-);
+import { Test } from './components/Test';
+import { Home } from './components/Home';
+import { About } from './components/About';
 
 
 function App() {
@@ -51,7 +37,6 @@ function App() {
           <Route path='/'>
           <Home/>
         </Route>
-        
         </Switch>
     </Router>
 
