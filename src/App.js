@@ -1,15 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router,
+Switch,
+Route, 
+Link,
+useRouteMatch,
+useParams} from "react-router-dom"
+import { Test } from './components/Test';
+import { Home } from './components/Home';
+import { About } from './components/About';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Political Compass</h2>
-        
-      </header>
-    </div>
+    <Router>
+        <header className="App-header">
+        <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+            <Link to='/test'>Test</Link>
+          </li>
+          <li>
+          <Link to='/about'>About</Link>
+        </li>
+      </ul>
+        </header> 
+        <Switch>
+          <Route path='/test'>
+            <Test/>
+          </Route>
+          <Route path='/about'>
+            <About/>
+          </Route>
+          <Route path='/'>
+          <Home/>
+        </Route>
+        </Switch>
+    </Router>
+
   );
 }
 
