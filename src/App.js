@@ -1,5 +1,5 @@
-import React from "react"
-import "./App.css"
+import React from 'react'
+import './App.css'
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,12 +7,11 @@ import {
   Link,
   useRouteMatch,
   useParams,
-} from "react-router-dom"
-import { Test } from "./components/Test"
-import { Home } from "./components/Home"
-import { About } from "./components/About"
-import WhoAreYou from "./pages/WhoAreYou"
-
+} from 'react-router-dom'
+import { Test } from './components/Test'
+import { Home } from './components/Home'
+import { About } from './components/About'
+import WhoAreYou from './pages/WhoAreYou'
 
 function App() {
   return (
