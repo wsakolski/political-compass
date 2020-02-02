@@ -2,8 +2,8 @@ const initialState = {
   articles: [],
 }
 
-function rootReducer(state = initialState, action) {
+function customReducer(state = initialState, action) {
   return state
 }
 
-export default rootReducer
+export default customReducer

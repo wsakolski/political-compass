@@ -11,6 +11,8 @@ import {
 import { Test } from "./components/Test"
 import { Home } from "./components/Home"
 import { About } from "./components/About"
+import WhoAreYou from "./pages/WhoAreYou"
+
 
 function App() {
   return (
@@ -24,6 +26,10 @@ function App() {
             <Link to="/test">Test</Link>
           </li>
           <li>
+            {/* TODO to be moved somewhere else after nested router is added*/}
+            <Link to="/question">Question</Link>
+          </li>
+          <li>
             <Link to="/about">About</Link>
           </li>
         </ul>
@@ -34,6 +40,9 @@ function App() {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/question">
+          <WhoAreYou />
         </Route>
         <Route path="/">
           <Home />

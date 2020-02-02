@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from "redux"
 import { reducer as formReducer } from "redux-form"
-import rootReducer from "../reducers/index"
+import customReducer from "../reducers/index"
 
 const rootReducer = combineReducers({
-  rootReducer: rootReducer,
+  customReducer: customReducer,
   form: formReducer,
 })
 

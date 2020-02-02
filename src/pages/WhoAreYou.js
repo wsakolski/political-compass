@@ -8,7 +8,6 @@ const options = [
 
 class WhoAreYou extends Component {
   submit = values => {
-    // print the form values to the console
     console.log(values, options)
   }
 
