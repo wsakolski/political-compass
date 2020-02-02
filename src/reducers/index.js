@@ -1,8 +1,9 @@
 const initialState = {
-    articles: []
-};
-function rootReducer(state = initialState, action) {
-    return state;
-};
+  articles: [],
+}
 
-export default rootReducer;
+function rootReducer(state = initialState, action) {
+  return state
+}
+
+export default rootReducer
