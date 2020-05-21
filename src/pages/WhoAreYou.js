@@ -3,7 +3,7 @@ import SimpleQuestion from "../forms/SimpleQuestion"
 
 const options = [
   { id: 1, title: "Communist" },
-  { id: 2, title: "" },
+  { id: 2, title: "Libertarian" },
 ]
 
 class WhoAreYou extends Component {
