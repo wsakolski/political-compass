@@ -1,2 +1,7 @@
 import React from 'react';
-export const About = () => (<h2>About</h2>);
+
+
+const About = styled.div`
+  font-size: 20px;
+`
+export const About = () => (<About>About</About>);
