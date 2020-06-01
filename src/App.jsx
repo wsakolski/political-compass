@@ -8,9 +8,9 @@ import {
   useRouteMatch,
   useParams,
 } from 'react-router-dom'
-import { Test } from './components/Test'
-import { Home } from './components/Home'
-import { About } from './components/About'
+import { Test } from './components/test.component'
+import { Home } from './components/home.component'
+import { About } from './components/about.component'
 import WhoAreYou from './pages/WhoAreYou'
 
 function App() {
@@ -25,27 +25,15 @@ function App() {
             <Link to="/test">Test</Link>
           </li>
           <li>
-            {/* TODO to be moved somewhere else after nested router is added*/}
-            <Link to="/question">Question</Link>
-          </li>
-          <li>
             <Link to="/about">About</Link>
           </li>
         </ul>
       </header>
       <Switch>
-        <Route path="/test">
-          <Test />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/question">
-          <WhoAreYou />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+        <Route exact path="/test" component={Test} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/question" component={WhoAreYou} />
+        <Route exact path="/" component={Home} />
       </Switch>
     </Router>
   )
