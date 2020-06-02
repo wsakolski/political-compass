@@ -1,6 +1,6 @@
 import React from 'react'
 
-let SimpleQuestion = props => {
+const SimpleQuestion = props => {
   const { handleSubmit } = props
 
   return (

@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { ReactComponent as Logo } from '../assets/explore.svg'
 
-const Header = styled.header`
+const StyledFooter = styled.footer`
   background-color: #282c34;
-  height: 80px;
+  height: 40px;
   color: white;
   font-size: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  //TODO refactor to link style
   &:visited {
     color: white;
   }
@@ -31,14 +31,17 @@ const Header = styled.header`
     }
   }
 `
-export const Navbar = () => (
-  <Header>
-    <div>
-      <Link to="/">
-        <Logo />
-      </Link>
-      <Link to="/test">Test</Link>
-      <Link to="/about">About</Link>
-    </div>
-  </Header>
-)
+const date = new Date().getFullYear()
+
+const Footer = () => {
+  return (
+    <StyledFooter>
+      <div>
+        <Link to="/about">&copy; Praxeo Code & Stellar Code</Link>
+        <span>{date}</span>
+      </div>
+    </StyledFooter>
+  )
+}
+
+export default Footer
