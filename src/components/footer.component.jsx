@@ -11,14 +11,6 @@ const StyledFooter = styled.footer`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  //TODO refactor to link style
-  &:visited {
-    color: white;
-  }
-  & a {
-    color: white;
-    text-decoration: none;
-  }
   & > div {
     width: 1200px;
     margin: 0 auto;
@@ -26,9 +18,6 @@ const StyledFooter = styled.footer`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    & *:not(:last-child) {
-      margin-right: 30px;
-    }
   }
 `
 const date = new Date().getFullYear()

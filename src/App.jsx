@@ -5,8 +5,9 @@ import { Test } from './components/test.component'
 import { Home } from './components/home.component'
 import { About } from './components/about.component'
 import WhoAreYou from './pages/WhoAreYou'
-import { Navbar } from './components/navbar.component'
+import Header from './components/header.component'
 import Footer from './components/footer.component'
+import NavBar from './components/navbar.component'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -25,23 +26,23 @@ const ContentWrapper = styled.div`
   flex: 1;
 `
 
-function App() {
-  return (
-    <AppWrapper>
-      <Navbar />
-      <AppContent>
-        <ContentWrapper>
-          <Switch>
-            <Route exact path="/test" component={Test} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/question" component={WhoAreYou} />
-            <Route exact path="/" component={Home} />
-          </Switch>
-        </ContentWrapper>
-      </AppContent>
-      <Footer />
-    </AppWrapper>
-  )
-}
+const App = () => (
+  <AppWrapper>
+    <Header>
+      <NavBar />
+    </Header>
+    <AppContent>
+      <ContentWrapper>
+        <Switch>
+          <Route exact path="/test" component={Test} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/question" component={WhoAreYou} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </ContentWrapper>
+    </AppContent>
+    <Footer />
+  </AppWrapper>
+)
 
 export default App
