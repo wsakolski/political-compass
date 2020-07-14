@@ -5,8 +5,93 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
-  font-family: 'IM Fell English SC', serif;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 code {
@@ -16,65 +101,59 @@ code {
 
 @font-face {
   font-family: 'decadence';
-  src: url('./fonts/decadencewithoutthediamonds-ayak-webfont.woff2') format('woff2'),
-  url('./fonts/decadencewithoutthediamonds-ayak-webfont.woff') format('woff');
+  src: url('./fonts/decadencewithoutthediamonds-ayak-webfont.woff2')
+      format('woff2'),
+    url('./fonts/decadencewithoutthediamonds-ayak-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
-
 
 @font-face {
   font-family: 'decadence_itd_condensed_marRg';
-  src: url('./fonts/decadenceitdcondensedmarquee-wpjn-webfont.woff2') format('woff2'),
-  url('./fonts/decadenceitdcondensedmarquee-wpjn-webfont.woff') format('woff');
+  src: url('./fonts/decadenceitdcondensedmarquee-wpjn-webfont.woff2')
+      format('woff2'),
+    url('./fonts/decadenceitdcondensedmarquee-wpjn-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
-
 
 @font-face {
   font-family: 'decadence_itd_condensedRg';
   src: url('./fonts/decadenceitdcondensed-e91m-webfont.woff2') format('woff2'),
-  url('./fonts/decadenceitdcondensed-e91m-webfont.woff') format('woff');
+    url('./fonts/decadenceitdcondensed-e91m-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
-
 
 @font-face {
   font-family: 'decadence_in_the_darkregular';
   src: url('./fonts/decadenceinthedark-0vg9-webfont.woff2') format('woff2'),
-  url('./fonts/decadenceinthedark-0vg9-webfont.woff') format('woff');
+    url('./fonts/decadenceinthedark-0vg9-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
   font-family: 'decadence_in_a_different_liRg';
-  src: url('./fonts/decadenceinadifferentlight-4n4p-webfont.woff2') format('woff2'),
-  url('./fonts/decadenceinadifferentlight-4n4p-webfont.woff') format('woff');
+  src: url('./fonts/decadenceinadifferentlight-4n4p-webfont.woff2')
+      format('woff2'),
+    url('./fonts/decadenceinadifferentlight-4n4p-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
   font-family: 'decadence_condensedregular';
   src: url('./fonts/decadencecondensed-ovmd-webfont.woff2') format('woff2'),
-  url('./fonts/decadencecondensed-ovmd-webfont.woff') format('woff');
+    url('./fonts/decadencecondensed-ovmd-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
   font-family: 'decadenceregular';
   src: url('./fonts/decadence-gwb1-webfont.woff2') format('woff2'),
-  url('./fonts/decadence-gwb1-webfont.woff') format('woff');
+    url('./fonts/decadence-gwb1-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
