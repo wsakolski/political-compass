@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Home } from "./Home"
+import { Home } from "./home.component"
 
 const AboutContainer = styled.div`
   font-size: 20px;

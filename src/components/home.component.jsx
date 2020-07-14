@@ -6,11 +6,11 @@ const HomeContainer = styled.div`
 `
 
 const HomeTitle = styled.h1`
-  font-size: 20px;
+  font-size: 40px;
 `
 
 export const Home = () => (
   <HomeContainer>
-    <HomeTitle>Home</HomeTitle>
+    <HomeTitle>Political Compass</HomeTitle>
   </HomeContainer>
 );
