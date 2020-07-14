@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { NavBarLink } from './common/links.component'
 
@@ -19,7 +19,7 @@ const StyledFooter = styled.footer`
 
 const date = new Date().getFullYear()
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <Background>
       <StyledFooter>
