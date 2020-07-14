@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 
 const AboutContainer = styled.div`
   font-size: 20px;
 `
-export const About = () => (
+export const About: FC = () => (
   <AboutContainer>
     <h1>About</h1>
     <p>Awesome project by Sylwia and Wladek :D</p>
