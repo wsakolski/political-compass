@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavBarLink } from './common/links.component'
 
 const Background = styled.div`
-  background-color: #282c34;
+  background-color: ${({theme}) => theme.color.dark};
 `
 const StyledFooter = styled.footer`
   height: 40px;
