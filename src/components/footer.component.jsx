@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { NavBarLink } from './common/links.component'
 
-const StyledFooter = styled.footer`
+const Background = styled.div`
   background-color: #282c34;
+`
+const StyledFooter = styled.footer`
   height: 40px;
   color: white;
   font-size: 20px;
@@ -11,25 +13,20 @@ const StyledFooter = styled.footer`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  & > div {
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
+  width: 1200px;
+  margin: 0 auto;
 `
+
 const date = new Date().getFullYear()
 
 const Footer = () => {
   return (
-    <StyledFooter>
-      <div>
-        <Link to="/about">&copy; Praxeo Code & Stellar Code</Link>
+    <Background>
+      <StyledFooter>
+        <NavBarLink to="/about">&copy; Praxeo Code & Stellar Code</NavBarLink>
         <span>{date}</span>
-      </div>
-    </StyledFooter>
+      </StyledFooter>
+    </Background>
   )
 }
 
