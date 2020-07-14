@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import styled, { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from 'styled-components'
 import { Test } from './components/test.component'
 import { Home } from './components/home.component'
 import { About } from './components/about.component'
@@ -8,7 +8,8 @@ import WhoAreYou from './pages/WhoAreYou'
 import Header from './components/header.component'
 import Footer from './components/footer.component'
 import NavBar from './components/navbar.component'
-import theme from "./theme"
+import theme from './theme'
+import Container from './components/common/containers.component'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -29,12 +30,14 @@ const App = () => (
         <NavBar />
       </Header>
       <AppContent>
-        <Switch>
-          <Route exact path="/test" component={Test} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/question" component={WhoAreYou} />
-          <Route exact path="/" component={Home} />
-        </Switch>
+        <Container>
+          <Switch>
+            <Route exact path="/test" component={Test} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/question" component={WhoAreYou} />
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </Container>
       </AppContent>
       <Footer />
     </AppWrapper>
