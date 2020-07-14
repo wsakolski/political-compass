@@ -9,12 +9,18 @@ import {
 } from 'react-router-dom'
 
 const Question = () => {
-  let { questionId } = useParams()
-  return <h3>Question ID {questionId}</h3>
+  const { questionId } = useParams()
+  return (
+    <h3>
+      Question ID
+      {' '}
+      {questionId}
+    </h3>
+)
 }
 
 export const Test = () => {
-  let match = useRouteMatch()
+  const match = useRouteMatch()
 
   return (
     <>

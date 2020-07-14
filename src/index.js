@@ -1,12 +1,12 @@
-/* eslint-disable react/jsx-filename-extension */
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import './index.css'
+import React from "react"
+import ReactDOM from "react-dom"
+import { Provider } from "react-redux"
+import "./index.css"
+import App from "./App"
+import * as serviceWorker from "./serviceWorker"
+import store from "./redux/store"
+import './fonts/decadence-gwb1-webfont.woff'
 import { BrowserRouter as Router } from 'react-router-dom'
-import App from './App'
-import * as serviceWorker from './serviceWorker'
-import store from './redux/store'
 
 ReactDOM.render(
   <Provider store={store}>
