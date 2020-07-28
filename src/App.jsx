@@ -8,8 +8,10 @@ import WhoAreYou from './pages/WhoAreYou'
 import Header from './components/header.component'
 import Footer from './components/footer.component'
 import NavBar from './components/navbar.component'
+import CheckboxQuestion from './forms/CheckboxQuestion'
 import theme from './theme'
 import Container from './components/common/containers.component'
+import TestPage from './pages/test.page'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -32,9 +34,9 @@ const App = () => (
       <AppContent>
         <Container>
           <Switch>
-            <Route exact path="/test" component={Test} />
+            <Route exact path="/test" component={TestPage} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/question" component={WhoAreYou} />
+            <Route exact path="/question" component={CheckboxQuestion} />
             <Route exact path="/" component={Home} />
           </Switch>
         </Container>
