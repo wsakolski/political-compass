@@ -23,19 +23,18 @@ interface QuestionProps {
 
 const CheckboxQuestion: FC<QuestionProps> = ({ question }) => {
   const [answer, setAnswer] = useState(null)
-  // console.log(answer);
 
   console.log(question)
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setAnswer(event.target.value)
-    // event.target.checked = true
+    const {value} = event.target
+    setAnswer(Number(value))
   }
   return (
     <>
       <h2>{question.questionText}</h2>
       {question.answers.map(({id,text}) => (
         <label key={id} htmlFor='answer'>
-          <input type="radio" id='answer' value={id} name='question' onChange={handleChange} checked={(answer === id)}  />
+          <input type="radio" id='answer' value={id} name='question' onChange={handleChange} checked={answer === id}  />
           {text}
         </label>
 ))}
