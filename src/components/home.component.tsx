@@ -41,8 +41,7 @@ export const Home = () => (
       shallow personality test. Our test profiles political personalities
       applicable to all democracies. Our expanding range of features enables you
       to compare the politics of different countries and political figures past
-      and present. Here’s a brief video introduction:
-      {' '}
+      and present. Here’s a brief video introduction:{' '}
       <a href="https://www.youtube.com/watch?v=5u3UCz0TM5Q">
         https://www.youtube.com/watch?v=5u3UCz0TM5Q
       </a>
