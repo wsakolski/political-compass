@@ -1,20 +1,20 @@
-import React, { ChangeEvent, useState } from "react"
+import React, { ChangeEvent, useState } from 'react'
 
-export interface userProps {
+export interface UserProps {
   firstName: string
   lastName: string
   email: string
 }
 
 interface SimpleQuestionProps {
-  handleSubmit: (values: userProps) => void
+  handleSubmit: (values: UserProps) => void
 }
 
-const SimpleQuestion = (props: SimpleQuestionProps ) => {
+const SimpleQuestion = (props: SimpleQuestionProps) => {
   const { handleSubmit } = props
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [email, setEmail] = useState("")
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFirstName(event.target.value)
@@ -29,7 +29,7 @@ const SimpleQuestion = (props: SimpleQuestionProps ) => {
   }
 
   const onSubmit = () => {
-    handleSubmit({firstName, lastName, email})
+    handleSubmit({ firstName, lastName, email })
   }
 
   return (
@@ -37,19 +37,34 @@ const SimpleQuestion = (props: SimpleQuestionProps ) => {
       <div>
         <label htmlFor="firstName">
           First Name
-          <input type="text" name="firstName" value={firstName} onChange={handleNameChange} />
+          <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={handleNameChange}
+          />
         </label>
       </div>
       <div>
         <label htmlFor="lastName">
           Last Name
-          <input type="text" name="lastName" value={lastName} onChange={handleLastNameChange} />
+          <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={handleLastNameChange}
+          />
         </label>
       </div>
       <div>
         <label htmlFor="email">
           Email
-          <input type="text" name="email" value={email} onChange={handleEmailChange} />
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
         </label>
       </div>
       <button type="submit">Submit</button>
