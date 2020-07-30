@@ -1,21 +1,9 @@
 import React from 'react'
-import {
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom'
+import { Switch, Route, Link, useRouteMatch, useParams } from 'react-router-dom'
 
 const Question = () => {
   const { questionId } = useParams()
-  return (
-    <h3>
-      Question ID
-      {' '}
-      {questionId}
-    </h3>
-)
+  return <h3>Question ID {questionId}</h3>
 }
 
 export const Test = () => {
