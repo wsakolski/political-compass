@@ -8,7 +8,7 @@ const containerStyles = css`
 `
 const Container = styled.div`
   ${containerStyles};
-  width: ${props => props.width || '1200px'};
+  width: ${(props) => props.width || '1200px'};
 `
 
 export default Container

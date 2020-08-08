@@ -1,0 +1,5 @@
+export const QuestionnaireActionTypes = {
+  SET_TEST: 'SET_TEST',
+  SET_ACTIVE_QUESTION: 'SET_ACTIVE_QUESTION',
+  COUNT_RESULT_POINTS: 'COUNT_RESULT_POINTS',
+}
