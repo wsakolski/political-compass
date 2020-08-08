@@ -6,12 +6,12 @@ interface AnswerPoints {
 }
 
 interface Answer {
-  id: number
   text: string
   points: AnswerPoints
 }
 
 interface Question {
+  id: number,
   questionText: string
   answers: Answer[]
 }
@@ -31,15 +31,15 @@ const CheckboxQuestion: FC<QuestionProps> = ({ question }) => {
   return (
     <>
       <h2>{question.questionText}</h2>
-      {question.answers.map(({ id, text }) => (
-        <label key={id} htmlFor="answer">
-          <input
+      {question.answers.map(({ text }, index) => (
+        <label key={index} htmlFor={`${question.id}`}>
+            <input
             type="radio"
-            id="answer"
-            value={id}
-            name="question"
+            id={`answer no ${index}`}
+            value={index}
+            name={`${question.id}`}
             onChange={handleChange}
-            checked={answer === id}
+            checked={answer === index}
           />
           {text}
         </label>

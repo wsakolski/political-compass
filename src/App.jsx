@@ -11,7 +11,7 @@ import NavBar from './components/navbar.component'
 import CheckboxQuestion from './forms/CheckboxQuestion'
 import theme from './theme'
 import Container from './components/common/containers.component'
-import TestPage from './pages/test.page'
+import TestPage from './pages/questionnaire/test.page'
 
 const AppWrapper = styled.div`
   display: flex;
