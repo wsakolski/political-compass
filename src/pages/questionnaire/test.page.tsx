@@ -1,27 +1,30 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { connect } from 'react-redux'
 import CheckboxQuestion from '../../forms/CheckboxQuestion'
-import { setTestPoints } from '../../redux/points/points.actions'
-import { politicalCompassTest } from './politicalCompassTest'
+import { selectCurrentQuestion } from '../../redux/questionnaire/questionnaire.selectors'
 import QuestionView from '../../components/question-view/question-view.component'
-
-const TestPage = ({ setTestPoints }) => {
+import { RootState } from '../../redux/root-reducer'
+import { Question } from '../../forms/CheckboxQuestion'
+interface TestPageProps {
+  currentQuestion: Question
+}
+const TestPage: FC<TestPageProps> = ({ currentQuestion }) => {
   return (
     <>
       <div>
-        {politicalCompassTest.map((question) => (
-          <QuestionView>
-            <CheckboxQuestion key={question.id} question={question} />
-          </QuestionView>
-        ))}
+        <QuestionView>
+          <CheckboxQuestion
+            key={currentQuestion.id}
+            question={currentQuestion}
+          />
+        </QuestionView>
       </div>
-
     </>
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  setTestPoints: (points) => dispatch(setTestPoints(points)),
+const mapStateToProps = (state: RootState) => ({
+  currentQuestion: selectCurrentQuestion(state),
 })
 
-export default connect(null, mapDispatchToProps)(TestPage)
+export default connect(mapStateToProps)(TestPage)

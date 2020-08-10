@@ -1,6 +1,6 @@
 export const politicalCompassTest = [
   {
-    id: 1,
+    id: 0,
     questionText:
       'If economic globalisation is inevitable, it should primarily serve humanity rather than the interests of trans-national corporations.',
     answers: [
@@ -23,7 +23,7 @@ export const politicalCompassTest = [
     ],
   },
   {
-    id: 2,
+    id: 1,
     questionText:
       'I’d always support my country, whether it was right or wrong.',
     answers: [
@@ -46,7 +46,7 @@ export const politicalCompassTest = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     questionText:
       'No one chooses his or her country of birth, so it’s foolish to be proud of it.',
     answers: [
@@ -69,7 +69,7 @@ export const politicalCompassTest = [
     ],
   },
   {
-    id: 4,
+    id: 3,
     questionText:
       'Our race has many superior qualities, compared with other races.',
     answers: [
@@ -92,7 +92,7 @@ export const politicalCompassTest = [
     ],
   },
   {
-    id: 5,
+    id: 4,
     questionText: 'The enemy of my enemy is my friend.',
     answers: [
       {

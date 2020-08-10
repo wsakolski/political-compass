@@ -10,7 +10,7 @@ interface Answer {
   points: AnswerPoints
 }
 
-interface Question {
+export interface Question {
   id: number,
   questionText: string
   answers: Answer[]

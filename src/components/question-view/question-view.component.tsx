@@ -1,6 +1,10 @@
 import React, { FC } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import {
+  setNextQuestion,
+  setPrevQuestion,
+} from '../../redux/questionnaire/questionnaire.actions'
 
 const QuestionWrapper = styled.div`
   margin-bottom: 40px;
@@ -11,13 +15,21 @@ const ButtonToolbar = styled.div`
   margin-top: 40px;
 `
 
-export const QuestionView: FC = ({ children }) => {
+interface QuestionViewProps {
+  setNextQuestion: () => void
+  setPrevQuestion: () => void
+}
+export const QuestionView: FC<QuestionViewProps> = ({
+  children,
+  setNextQuestion,
+  setPrevQuestion,
+}) => {
   return (
     <QuestionWrapper>
       {children}
       <ButtonToolbar>
-        <button>Prev question</button>
-        <button>Next question</button>
+        <button onClick={setPrevQuestion}>Prev question</button>
+        <button onClick={setNextQuestion}>Next question</button>
       </ButtonToolbar>
     </QuestionWrapper>
   )
@@ -25,6 +37,9 @@ export const QuestionView: FC = ({ children }) => {
 
 // const mapStateToProps = () => ({})
 
-// const mapDispatchToProps = {}
+const mapDispatchToProps = (dispatch: any) => ({
+  setNextQuestion: () => dispatch(setNextQuestion),
+  setPrevQuestion: () => dispatch(setPrevQuestion),
+})
 
-export default connect(null, null)(QuestionView)
+export default connect(null, mapDispatchToProps)(QuestionView)
