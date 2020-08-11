@@ -48,10 +48,10 @@ const CheckboxQuestion: FC<QuestionProps> = ({
           <input
             type="radio"
             id={`answer no ${index}`}
-            value={index}
+            value={index + 1}
             name={`${question.id}`}
             onChange={handleChange}
-            checked={answer === index}
+            checked={answer === index + 1}
           />
           {text}
         </label>
