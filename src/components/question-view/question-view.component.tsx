@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import {
@@ -16,6 +16,7 @@ const ButtonToolbar = styled.div`
 `
 
 interface QuestionViewProps {
+  children: (tools: any) => JSX.Element
   setNextQuestion: () => void
   setPrevQuestion: () => void
 }
@@ -24,12 +25,20 @@ export const QuestionView: FC<QuestionViewProps> = ({
   setNextQuestion,
   setPrevQuestion,
 }) => {
+  const [nextQuestionDisabled, setNextQuestionDisabled] = useState(true)
+
+  const isQuestionAnswered = (isAnswered: boolean) => {
+    setNextQuestionDisabled(isAnswered ? false : true)
+  }
+
   return (
     <QuestionWrapper>
-      {children}
+      {children({ isQuestionAnswered })}
       <ButtonToolbar>
         <button onClick={setPrevQuestion}>Prev question</button>
-        <button onClick={setNextQuestion}>Next question</button>
+        <button onClick={setNextQuestion} disabled={nextQuestionDisabled}>
+          Next question
+        </button>
       </ButtonToolbar>
     </QuestionWrapper>
   )

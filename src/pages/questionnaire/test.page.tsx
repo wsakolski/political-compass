@@ -13,10 +13,13 @@ const TestPage: FC<TestPageProps> = ({ currentQuestion }) => {
     <>
       <div>
         <QuestionView>
-          <CheckboxQuestion
-            key={currentQuestion.id}
-            question={currentQuestion}
-          />
+          {(questionViewProps) => (
+            <CheckboxQuestion
+              key={currentQuestion.id}
+              question={currentQuestion}
+              {...questionViewProps}
+            />
+          )}
         </QuestionView>
       </div>
     </>
