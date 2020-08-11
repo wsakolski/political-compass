@@ -13,11 +13,11 @@ const TestPage: FC<TestPageProps> = ({ currentQuestion }) => {
     <>
       <div>
         <QuestionView>
-          {(questionViewProps) => (
+          {(controlProps) => (
             <CheckboxQuestion
               key={currentQuestion.id}
               question={currentQuestion}
-              {...questionViewProps}
+              {...controlProps}
             />
           )}
         </QuestionView>
