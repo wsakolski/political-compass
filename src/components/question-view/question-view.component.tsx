@@ -1,10 +1,7 @@
 import React, { FC, useState } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import {
-  setNextQuestion,
-  setPrevQuestion,
-} from '../../redux/questionnaire/questionnaire.actions'
+import { setCurrentQuestion } from '../../redux/questionnaire/questionnaire.actions'
 
 const QuestionWrapper = styled.div`
   margin-bottom: 40px;
@@ -17,13 +14,15 @@ const ButtonToolbar = styled.div`
 
 interface QuestionViewProps {
   children: (tools: any) => JSX.Element
-  setNextQuestion: () => void
-  setPrevQuestion: () => void
+  setCurrentQuestion: (index: number) => void
+  questionId: number
+  testLength: number
 }
 export const QuestionView: FC<QuestionViewProps> = ({
   children,
-  setNextQuestion,
-  setPrevQuestion,
+  questionId,
+  testLength,
+  setCurrentQuestion,
 }) => {
   const [nextQuestionDisabled, setNextQuestionDisabled] = useState(true)
 
@@ -31,24 +30,31 @@ export const QuestionView: FC<QuestionViewProps> = ({
     setNextQuestionDisabled(isAnswered ? false : true)
   }
 
+  const setPrevQuestion = () => {
+    if (questionId) setCurrentQuestion(questionId - 1)
+  }
+  const setNextQuestion = () => {
+    if (questionId < testLength - 1) setCurrentQuestion(questionId + 1)
+  }
+
   return (
     <QuestionWrapper>
       {children({ isQuestionAnswered })}
       <ButtonToolbar>
         <button onClick={setPrevQuestion}>Prev question</button>
-        <button onClick={setNextQuestion} disabled={nextQuestionDisabled}>
-          Next question
-        </button>
+        {questionId < testLength - 1 && (
+          <button onClick={setNextQuestion} disabled={nextQuestionDisabled}>
+            Next question
+          </button>
+        )}
+        {questionId === testLength - 1 && <button>See your results</button>}
       </ButtonToolbar>
     </QuestionWrapper>
   )
 }
 
-// const mapStateToProps = () => ({})
-
 const mapDispatchToProps = (dispatch: any) => ({
-  setNextQuestion: () => dispatch(setNextQuestion),
-  setPrevQuestion: () => dispatch(setPrevQuestion),
+  setCurrentQuestion: (index: number) => dispatch(setCurrentQuestion(index)),
 })
 
 export default connect(null, mapDispatchToProps)(QuestionView)
