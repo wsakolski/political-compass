@@ -20,6 +20,17 @@ const questionnaireReducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentQuestion: politicalCompassTest[action.payload],
       }
+    case QuestionnaireActionTypes.SET_QUESTION_RESULTS:
+      return {
+        ...state,
+        results: [
+          ...state.results,
+          {
+            id: state.currentQuestion.id,
+            answer: state.currentQuestion.answers[action.payload],
+          },
+        ],
+      }
     default:
       return state
   }
