@@ -25,11 +25,11 @@ const CheckboxQuestion: FC<QuestionProps> = ({
   question,
   isQuestionAnswered,
 }) => {
-  const [answer, setAnswer] = useState<null | number>(null)
+  const [answer, setAnswer] = useState<string>('')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
-    setAnswer(Number(value))
+    setAnswer(value)
     isQuestionAnswered(true)
   }
 
@@ -48,10 +48,10 @@ const CheckboxQuestion: FC<QuestionProps> = ({
           <input
             type="radio"
             id={`answer no ${index}`}
-            value={index + 1}
+            value={index.toString()}
             name={`${question.id}`}
             onChange={handleChange}
-            checked={answer === index + 1}
+            checked={answer === index.toString()}
           />
           {text}
         </label>
