@@ -18,26 +18,24 @@ export interface Question {
 
 interface QuestionProps {
   question: Question
-  isQuestionAnswered: (isAnswered: boolean) => void
+  getQuestionResults: (result: string) => void
+  questionAnswer: string
 }
 
 const CheckboxQuestion: FC<QuestionProps> = ({
   question,
-  isQuestionAnswered,
+  getQuestionResults,
+  questionAnswer,
 }) => {
-  const [answer, setAnswer] = useState<string>('')
+  const [answer, setAnswer] = useState<string>(questionAnswer || '')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
     setAnswer(value)
-    isQuestionAnswered(true)
   }
 
   useEffect(() => {
-    isQuestionAnswered(answer ? true : false)
-    return () => {
-      isQuestionAnswered(false)
-    }
+    getQuestionResults(answer)
   }, [answer])
 
   return (

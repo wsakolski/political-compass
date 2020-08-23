@@ -10,3 +10,10 @@ export const selectTestLength = createSelector(
   [selectQuestionnaire],
   (questionnaire) => questionnaire.testLength
 )
+export const selectTestResults = createSelector(
+  [selectQuestionnaire],
+  (questionnaire) => questionnaire.results
+)
+
+export const selectQuestionResult = (questionId) =>
+  selectTestResults()[questionId]

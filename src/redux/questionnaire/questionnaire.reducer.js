@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   test: politicalCompassTest,
   testLength: politicalCompassTest.length,
   currentQuestion: politicalCompassTest[0],
-  results: null,
+  results: [],
 }
 
 const findQuestionIndex = (questionObject) =>
@@ -20,16 +20,23 @@ const questionnaireReducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentQuestion: politicalCompassTest[action.payload],
       }
-    case QuestionnaireActionTypes.SET_QUESTION_RESULTS:
+    case QuestionnaireActionTypes.SET_QUESTION_RESULT:
+      let newResults = null
+      const questionAnswer = {
+        id: state.currentQuestion.id,
+        answerId: action.payload,
+        answer: state.currentQuestion.answers[action.payload],
+      }
+
+      if (state.results[state.currentQuestion.id]) {
+        newResults = [...state.results]
+        newResults[state.currentQuestion.id] = questionAnswer
+      } else {
+        newResults = [...state.results, questionAnswer]
+      }
       return {
         ...state,
-        results: [
-          ...state.results,
-          {
-            id: state.currentQuestion.id,
-            answer: state.currentQuestion.answers[action.payload],
-          },
-        ],
+        results: newResults,
       }
     default:
       return state
