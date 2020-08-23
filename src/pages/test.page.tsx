@@ -1,7 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import CheckboxQuestion from '../forms/CheckboxQuestion'
-import {setTestPoints} from '../redux/points/points.actions'
+import { setTestPoints } from '../redux/points/points.actions'
 
 const question = {
   questionText:
@@ -30,23 +30,22 @@ const question = {
   ],
 }
 
-
-
-const TestPage = ({setTestPoints}) => {
+const TestPage = () => {
   return (
     <>
       <div>
         <CheckboxQuestion question={question} />
       </div>
-      <button onClick={() => setTestPoints({x: 1, y: 3})}>Save points to redux</button>
+      {/* tslint:disable-next-line:jsx-no-lambda */}
+      <button onClick={() => setTestPoints({ x: 1, y: 3 })}>
+        Save points to redux
+      </button>
     </>
   )
 }
 
-const mapDispatchToProps = dispatch => (
-  {setTestPoints: (points) => dispatch(setTestPoints(points))
-  }
-)
+const mapDispatchToProps = (dispatch: any) => ({
+  setTestPoints: (points: any) => dispatch(setTestPoints(points)),
+})
 
 export default connect(null, mapDispatchToProps)(TestPage)
-
