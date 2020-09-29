@@ -1,4 +1,4 @@
-import React, { FC, useState, ChangeEvent } from 'react'
+import React, { FC, useState, useEffect, ChangeEvent } from 'react'
 
 interface AnswerPoints {
   x: number
@@ -6,40 +6,50 @@ interface AnswerPoints {
 }
 
 interface Answer {
-  id: number
   text: string
   points: AnswerPoints
 }
 
-interface Question {
+export interface Question {
+  id: number
   questionText: string
   answers: Answer[]
 }
 
 interface QuestionProps {
   question: Question
+  getQuestionResults: (result: string) => void
+  questionAnswer: string
 }
 
-const CheckboxQuestion: FC<QuestionProps> = ({ question }) => {
-  const [answer, setAnswer] = useState<null | number>(null)
+const CheckboxQuestion: FC<QuestionProps> = ({
+  question,
+  getQuestionResults,
+  questionAnswer,
+}) => {
+  const [answer, setAnswer] = useState<string>(questionAnswer || '')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
-    setAnswer(Number(value))
+    setAnswer(value)
   }
+
+  useEffect(() => {
+    getQuestionResults(answer)
+  }, [answer])
 
   return (
     <>
       <h2>{question.questionText}</h2>
-      {question.answers.map(({ id, text }) => (
-        <label key={id} htmlFor="answer">
+      {question.answers.map(({ text }, index) => (
+        <label key={index} htmlFor={`${question.id}`}>
           <input
             type="radio"
-            id="answer"
-            value={id}
-            name="question"
+            id={`answer no ${index}`}
+            value={index.toString()}
+            name={`${question.id}`}
             onChange={handleChange}
-            checked={answer === id}
+            checked={answer === index.toString()}
           />
           {text}
         </label>
